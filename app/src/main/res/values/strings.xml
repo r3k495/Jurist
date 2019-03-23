@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Jurist</string>
+    <string name="lawyer_registration">LAWYER REGISTRATION</string>
+    <string name="lawyer_icon" />
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="lawyer_mail">lawyer_mail</string>
+    <string name="email">EMAIL</string>
+    <string name="phone_no">PHONE NO</string>
+    <string name="city">CITY</string>
+    <string name="reference_no">REFERENCE NO</string>
+</resources>

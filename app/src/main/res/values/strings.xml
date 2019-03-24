@@ -9,4 +9,11 @@
     <string name="phone_no">PHONE NO</string>
     <string name="city">CITY</string>
     <string name="reference_no">REFERENCE NO</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="cancel">CANCEL</string>
+    <string name="create_your_password">CREATE YOUR PASSWORD</string>
+    <string name="password_icon" />
+    <string name="re_enter_password">RE-ENTER PASSWORD</string>
+    <string name="password">PASSWORD</string>
+    <string name="create_password">CREATE PASSWORD</string>
 </resources>

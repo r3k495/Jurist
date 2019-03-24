@@ -10,22 +10,23 @@
 
     <TextView
         android:id="@+id/lawyer_registration"
-        android:layout_width="202dp"
-        android:layout_height="31dp"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="109dp"
-        android:layout_marginBottom="649dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="648dp"
         android:fontFamily="@font/bold"
         android:text="@string/lawyer_registration"
         android:textAlignment="center"
         android:textColor="#ccba8a"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="LAWYER REGISTRATION" />
 
     <ImageView
         android:id="@+id/lawyer"
@@ -45,7 +46,6 @@
 
     <EditText
         android:id="@+id/first_name"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -57,18 +57,18 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="393dp"
         android:background="#1ACCBA8A"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp"
         android:drawableStart="@drawable/ic_person_24px"
         android:drawablePadding="5dp"
         android:fontFamily="@font/light"
         android:hint="@string/first_name"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
         android:textColorHint="#ccba8a"
-        android:autofillHints="" />
+        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/last_name"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -80,18 +80,18 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="344dp"
         android:background="#1ACCBA8A"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp"
         android:drawableStart="@drawable/ic_person_24px"
         android:drawablePadding="5dp"
         android:fontFamily="@font/light"
         android:hint="@string/last_name"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
         android:textColorHint="#ccba8a"
-        android:autofillHints="" />
+        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/email"
-        android:inputType="textEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -103,18 +103,19 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="296dp"
         android:background="#1ACCBA8A"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp"
         android:drawableStart="@drawable/ic_local_post_office_24px"
         android:drawablePadding="5dp"
         android:fontFamily="@font/light"
         android:hint="@string/email"
-        android:textColorHint="#ccba8a"/>
+        android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:textColorHint="#ccba8a"
+        android:textSize="12sp" />
 
 
     <EditText
         android:id="@+id/phone_no"
-        android:inputType="phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -126,17 +127,18 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="249dp"
         android:background="#1ACCBA8A"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp"
         android:drawableStart="@drawable/ic_phone_in_talk_24px"
         android:drawablePadding="5dp"
         android:fontFamily="@font/light"
         android:hint="@string/phone_no"
-        android:textColorHint="#ccba8a" />
+        android:inputType="phone"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:textColorHint="#ccba8a"
+        android:textSize="12sp" />
 
     <EditText
         android:id="@+id/city"
-        android:inputType="text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -151,9 +153,71 @@
         android:drawableStart="@drawable/ic_place_24px"
         android:drawablePadding="5dp"
         android:fontFamily="@font/light"
+        android:hint="@string/city"
+        android:inputType="text"
         android:paddingStart="10dp"
         android:paddingEnd="0dp"
-        android:hint="@string/city"
-        android:textColorHint="#ccba8a" />
+        android:textColorHint="#ccba8a"
+        android:textSize="12sp" />
+
+
+    <EditText
+        android:id="@+id/reference_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="537dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="157dp"
+        android:background="#1ACCBA8A"
+        android:drawableStart="@drawable/ic_place_24px"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/light"
+        android:hint="@string/reference_no"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:textColorHint="#ccba8a"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/lawyer_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="585dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="102dp"
+        android:background="#ccba8a"
+        android:text="@string/sign_up"
+        android:textColor="#3C4043" />
+
+    <Button
+        android:id="@+id/lawyer_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="585dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="101dp"
+        android:background="#ccba8a"
+        android:text="@string/cancel"
+        android:textColor="#3C4043" />
+
+
+
 </RelativeLayout>
+
 

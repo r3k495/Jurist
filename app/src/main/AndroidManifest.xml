@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.jurist">
+    package="com.example.jurist"
+    android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +18,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".profileActivity"></activity>
+        <activity
+            android:name=".Jurist"
+            android:label="@string/title_activity_jurist"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".notifcationActivity" />
+        <activity android:name=".pastActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".city" />
+        <activity android:name=".dropDown" />
+        <activity android:name=".ForgotPassword">
+            <intent-filter>
+                <action android:name=".ForgotPassword" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".progressBar">
+            <intent-filter>
+                <action android:name=".progressBar" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +49,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".createPassword">
+        <activity android:name=".home">
             <intent-filter>
-                <action android:name=".createPassword" />
+                <action android:name=".home" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name=".login" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

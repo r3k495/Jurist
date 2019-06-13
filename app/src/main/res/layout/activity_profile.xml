@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:textAlignment="center"
+    tools:context=".profileActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/bold"
+        android:paddingTop="35dp"
+        android:id="@+id/profile_heading"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:text="PROFILE DETAILS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/s"
+        android:id="@+id/profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/s"
+        android:paddingTop="35dp"
+        android:id="@+id/profile_last"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/s"
+        android:paddingTop="40dp"
+        android:id="@+id/profile_email"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/s"
+        android:paddingTop="45dp"
+        android:id="@+id/profile_phone"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+
+    <TextView
+        android:textSize="20dp"
+        android:fontFamily="@font/s"
+        android:paddingTop="50dp"
+        android:id="@+id/profile_reference"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+</LinearLayout>

@@ -8,6 +8,7 @@ public class jurist_lawyer {
     String phone_no;
     String reference_no;
 
+
     public jurist_lawyer(){
 
 
@@ -20,6 +21,8 @@ public class jurist_lawyer {
         this.email = email;
         this.phone_no = phone_no;
         this.reference_no = reference_no;
+
+
     }
 
 
@@ -42,4 +45,5 @@ public class jurist_lawyer {
     public String getReference_no() {
         return reference_no;
     }
+
 }

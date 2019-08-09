@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".profileActivity"></activity>
+        <activity android:name=".eventHistory"></activity>
+        <activity android:name=".profileActivity" />
         <activity
             android:name=".Jurist"
             android:label="@string/title_activity_jurist"
@@ -59,6 +60,13 @@
         <activity android:name=".login">
             <intent-filter>
                 <action android:name=".login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Edit">
+            <intent-filter>
+                <action android:name=".Edit" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

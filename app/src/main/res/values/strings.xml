@@ -114,7 +114,30 @@
     <string name="profile_phone"></string>
     <string name="profile_reference"></string>
     <string name="logout"></string>
+    <string name="choose_image">CHOOSE IMAGE</string>
+    <string name="upload_image">UPLOAD IMAGE</string>
+    <string name="todo">TODO</string>
+    <string name="profile_details">PROFILE DETAILS</string>
+    <string name="edit_profile_picture">EDIT PROFILE PICTURE</string>
+    <string name="shedule">SHEDULE</string>
+    <string name="save">SAVE</string>
+    <string name="event" />
+    <string name="date" />
+    <string name="time" />
 
+    <string name="create_cancel" />
+    <string name="create">CREATE</string>
+    <string name="yyyy_mm_dd_hh_mm">YYYY.MM.DD.HH.MM</string>
+    <string name="field_2">Field 2</string>
+    <string name="field_3">Field 3</string>
+    <string name="field_4">Field 4</string>
+    <string name="button">Button</string>
+    <string name="lawyer_event" />
+    <string name="events">EVENTS</string>
+    <string name="DATE">YYYY-MM-DD HH:MM</string>
+    <string name="create_button">CREATE</string>
+    <string name="view_events">VIEW EVENTS</string>
+    <string name="your_events">YOUR EVENTS</string>
 
 
 </resources>

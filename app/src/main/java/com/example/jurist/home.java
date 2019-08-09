@@ -156,7 +156,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         String password = signup_password.getText().toString().trim();
         String re_enter_password = signup_re_enter_password.getText().toString().trim();
 
-        //password validation
+        //phone no validation
         String regex = "^7|0|(?:\\+94)[0-9]{9,10}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(phone_no);
@@ -228,7 +228,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onComplete (@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            //finish();
+                            finish();
                             startActivity(new Intent(home.this,Jurist.class ));
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             firebaseUserid= user.getUid();
@@ -288,7 +288,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         }
         switch (view.getId()) {
             case R.id.below_login:
-                //finish();
+                finish();
                 Intent intent = new Intent(this, login.class);
                 startActivity(intent);
 

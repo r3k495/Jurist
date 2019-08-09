@@ -248,6 +248,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:fontFamily="@font/bold"
         android:layout_marginStart="132dp"
         android:layout_marginTop="640dp"
         android:layout_marginEnd="245dp"
@@ -269,6 +270,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="125dp"
         android:background="@drawable/button"
+        android:fontFamily="@font/bold"
         android:text="@string/cancel"
         android:textColor="#3C4043" />
 

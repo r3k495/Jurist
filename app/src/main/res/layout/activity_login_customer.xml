@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3C4043"
-    tools:context=".login">
+    tools:context=".loginCustomer">
 
     <TextView
         android:id="@+id/login"
@@ -20,7 +20,7 @@
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="606dp"
         android:fontFamily="@font/bold"
-        android:text="@string/lawyer_login"
+        android:text="@string/customer_login"
         android:textAlignment="center"
         android:textColor="#ccba8a"
         android:textSize="18sp"
@@ -91,8 +91,6 @@
         android:textColorHint="#ccba8a"
         android:textColor="#ccba8a"
         android:textSize="12sp" />
-
-
 
     <Button
         android:id="@+id/login_button"

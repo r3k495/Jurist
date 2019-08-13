@@ -22,12 +22,12 @@
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="672dp"
         android:fontFamily="@font/bold"
-        android:text="@string/lawyer_registration"
+        android:text="@string/customer_registration"
         android:textAlignment="center"
         android:textColor="#ccba8a"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:text="LAWYER REGISTRATION" />
+        tools:text="CUSTOMER REGISTRATION" />
 
     <ImageView
         android:id="@+id/lawyer"
@@ -41,8 +41,8 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="146dp"
         android:layout_marginBottom="580dp"
-        android:contentDescription="@string/lawyer_icon"
-        app:srcCompat="@drawable/lawyer_icon" />
+        android:contentDescription="@string/customer_icon"
+        app:srcCompat="@drawable/customer" />
 
 
     <EditText
@@ -170,7 +170,7 @@
 
 
     <EditText
-        android:id="@+id/reference_no"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -181,30 +181,6 @@
         android:layout_marginTop="490dp"
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="275dp"
-        android:background="@drawable/edit_text"
-        android:drawableStart="@drawable/ic_work_24px"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/light"
-        android:hint="@string/reference_no"
-        android:inputType="text"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp"
-        android:textColor="#ccba8a"
-        android:textColorHint="#ccba8a"
-        android:textSize="12sp" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="225dp"
         android:background="@drawable/edit_text"
         android:drawableStart="@drawable/ic_https_24px"
         android:drawablePadding="5dp"
@@ -225,9 +201,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="590dp"
+        android:layout_marginTop="540dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="175dp"
+        android:layout_marginBottom="225dp"
         android:background="@drawable/edit_text"
         android:drawableStart="@drawable/ic_vpn_key_24px"
         android:drawablePadding="5dp"
@@ -250,9 +226,9 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/bold"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="640dp"
+        android:layout_marginTop="590dp"
         android:layout_marginEnd="245dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="175dp"
         android:background="@drawable/button"
         android:text="@string/sign_up"
         android:textColor="#3C4043" />
@@ -266,9 +242,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="245dp"
-        android:layout_marginTop="640dp"
+        android:layout_marginTop="590dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="175dp"
         android:background="@drawable/button"
         android:fontFamily="@font/bold"
         android:text="@string/cancel"

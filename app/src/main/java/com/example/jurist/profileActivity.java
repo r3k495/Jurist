@@ -63,6 +63,7 @@ public class profileActivity extends AppCompatActivity implements View.OnClickLi
     private String lawyeremail;
     private String lawyerphone;
     private String lawyerreference;
+    Button edit_button;
     private String img;
     private static boolean flag;
 
@@ -82,9 +83,13 @@ public class profileActivity extends AppCompatActivity implements View.OnClickLi
         upload=(Button)findViewById(R.id.upload);
         choose=(Button)findViewById(R.id.choose);
         profile_image=(ImageView)findViewById(R.id.profile_image);
+        edit_button = (Button) findViewById(R.id.edit_button);
+
 
         upload.setOnClickListener(this);
         choose.setOnClickListener(this);
+        edit_button.setOnClickListener(profileActivity.this);
+
 
 
 
@@ -225,6 +230,16 @@ public class profileActivity extends AppCompatActivity implements View.OnClickLi
         else if(v==upload){
             uploadFile();
             //upload to firebase
+        }
+
+        if(v==edit_button){
+
+        }
+        switch (v.getId()) {
+            case R.id.edit_button:
+                Intent intent = new Intent(profileActivity.this, updateProfile.class);
+                startActivity(intent);
+
         }
 
     }

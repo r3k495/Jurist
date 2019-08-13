@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Jurist</string>
     <string name="lawyer_registration">LAWYER REGISTRATION</string>
     <string name="lawyer_icon" />
@@ -138,6 +138,30 @@
     <string name="create_button">CREATE</string>
     <string name="view_events">VIEW EVENTS</string>
     <string name="your_events">YOUR EVENTS</string>
+    <string name="choose">CHOOSE</string>
+    <string name="upload">UPLOAD</string>
+    <string name="edit_profile">EDIT PROFILE</string>
+    <string name="update_profile">UPDATE PROFILE</string>
+    <string name="profession">Profession</string>
+    <string name="registration_number">Registration Number</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="update">UPDATE</string>
+    <string name="first_name_update">FIREST NAME</string>
+    <string name="last_name_update">LAST NAME</string>
+    <string name="phone_num">PHONE NUMBER</string>
+    <string name="email_new">YOU CAN\'T CHANGE EMAIL</string>
+    <string name="reference_number">YOU CAN\'T CHANGE REFERENCE NO</string>
+    <string name="customer">CUSTOMER</string>
+    <string name="lawyer">LAWYER</string>
+    <string name="login_customer">LOGIN</string>
+    <string name="sign_up_customer">SIGN UP</string>
+    <string name="customer_icon" />
+    <string name="customer_registration">CUSTOMER REGISTRATION</string>
+    <string name="customer_login">CUSTOMER LOGIN</string>
+    <string name="title_activity_customer_navigation">customerNavigation</string>
+    <string name="reserve">Reserve</string>
+    <string name="log_out">Log out</string>
+    <string name="ref_no">REFERENCE NO</string>
 
 
 </resources>

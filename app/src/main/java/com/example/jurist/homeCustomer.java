@@ -52,7 +52,7 @@ import java.util.regex.*;
 
 
 
-public class home extends AppCompatActivity implements View.OnClickListener {
+public class homeCustomer extends AppCompatActivity implements View.OnClickListener {
 
 
     private Button signup;
@@ -61,7 +61,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
     private EditText signup_last_name;
     private EditText signup_email;
     private EditText signup_phone_no;
-    private EditText signup_reference_no;
     private EditText signup_password;
     private EditText signup_re_enter_password;
     private TextView below_login;
@@ -83,7 +82,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_customer);
 
         Spinner spinner = (Spinner) findViewById(R.id.city_spinner);
 
@@ -101,7 +100,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference= FirebaseDatabase.getInstance().getReference("Lawyers");
+        databaseReference= FirebaseDatabase.getInstance().getReference("Customers");
 
 
         progressDialog = new ProgressDialog(this);
@@ -112,7 +111,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         signup_last_name=(EditText) findViewById(R.id.last_name);
         signup_email=(EditText) findViewById(R.id.email);
         signup_phone_no=(EditText) findViewById(R.id.phone_no);
-        signup_reference_no=(EditText) findViewById(R.id.reference_no);
         signup_password=(EditText) findViewById(R.id.password);
         signup_re_enter_password=(EditText) findViewById(R.id.re_enter_password);
         below_login=(TextView) findViewById(R.id.below_login);
@@ -123,7 +121,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
 
     }
-
 
 
     //email validation
@@ -153,13 +150,12 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         final String last_name = signup_last_name.getText().toString().trim();
         final String email = signup_email.getText().toString().trim();
         final String phone_no = signup_phone_no.getText().toString().trim();
-        final String reference_no = signup_reference_no.getText().toString().trim();
         String password = signup_password.getText().toString().trim();
         String re_enter_password = signup_re_enter_password.getText().toString().trim();
 
 
 
-            //email validation
+        //email validation
         if(!isValidEmail(email)){
             Toast.makeText(this,"Please enter valid email", Toast.LENGTH_SHORT).show();
             return;
@@ -195,11 +191,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
-        if(TextUtils.isEmpty(reference_no)){
-            Toast.makeText(this,"Please enter reference no", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         if(TextUtils.isEmpty(re_enter_password)){
             Toast.makeText(this,"Please enter confirm password", Toast.LENGTH_SHORT).show();
             return;
@@ -220,14 +211,12 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
-
         //validation for phone no
         if (phone_no.length()<10) {
 
             Toast.makeText(this, "Please enter valid phone number", Toast.LENGTH_SHORT).show();
             return;
         }
-
 
 
 
@@ -241,21 +230,20 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete (@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(home.this,Jurist.class ));
+                            startActivity(new Intent(homeCustomer.this,customerNavigation.class ));
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             firebaseUserid= user.getUid();
-                           // String id=databaseReference.push().getKey();
+                            // String id=databaseReference.push().getKey();
+                            jurist_customer customer=new jurist_customer(first_name,last_name,email,phone_no);
+                            databaseReference.child(firebaseUserid).setValue(customer);
 
-                            jurist_lawyer lawyer=new jurist_lawyer(first_name,last_name,email,phone_no,reference_no);
-                            databaseReference.child(firebaseUserid).setValue(lawyer);
-
-                            Toast.makeText(home.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(homeCustomer.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
 
                             sendEmailVerification();
                             progressDialog.dismiss();
                         }
                         else {
-                            Toast.makeText(home.this,"Couldn't Registered, Try again!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(homeCustomer.this,"Couldn't Registered, Try again!",Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
 
                         }
@@ -266,8 +254,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
 
     }
-
-
     private void sendEmailVerification() {
         // Disable button
 
@@ -276,7 +262,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         // [START send_email_verification]
         final FirebaseUser user = firebaseAuth.getCurrentUser();
         user.sendEmailVerification()
-                .addOnCompleteListener(home.this, new OnCompleteListener<Void>() {
+                .addOnCompleteListener(homeCustomer.this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         // [START_EXCLUDE]
@@ -292,30 +278,29 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
 
 
-
     @Override
     public void onClick(View view) {
         if(view==signup){
             registerLawyer();
         }
-        
+
         if(view==below_login){
 
         }
         switch (view.getId()) {
             case R.id.below_login:
                 finish();
-                Intent intent = new Intent(this, login.class);
+                Intent intent = new Intent(this, loginCustomer.class);
                 startActivity(intent);
 
         }
 
-               if(view==signup_cancel){
+        if(view==signup_cancel){
 
         }
         switch (view.getId()) {
             case R.id.lawyer_cancel:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, customer.class);
                 startActivity(intent);
 
         }
@@ -337,7 +322,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             // Another interface callback
         }
     }
-
 
 
 }

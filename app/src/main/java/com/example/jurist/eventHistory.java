@@ -9,11 +9,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,61 +43,71 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class eventHistory extends AppCompatActivity{
+public class eventHistory extends AppCompatActivity {
 
-
-    private FirebaseAuth firebaseAuth;
-    private TextView date;
-    private DataSnapshot dataSnapshot;
+    private ListView dateView;
+    private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    //private TextView event_history;
     private FirebaseUser firebaseUser;
-    private DatabaseError databaseError;
+    FirebaseAuth firebaseAuth;
 
-    private String dateView;
 
-    private static boolean flag;
-
-    private static Button edit;
-
+    private ArrayList<String> list = new ArrayList<String>();
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar().hide(); // hide the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_history);
-
-
-        date=(TextView) findViewById(R.id.date_view);
-
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
+        dateView = (ListView) findViewById(R.id.date_view);
+        //event_history = (TextView) findViewById(R.id.event_history);
+        adapter = new ArrayAdapter<String>(eventHistory.this, android.R.layout.simple_list_item_1,list);
+        dateView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Lawyers");
 
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().getRoot();
-        databaseReference.child("Events").equalTo(firebaseUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+
+
+
+        databaseReference.child(firebaseUser.getUid()).addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                dateView= (String) dataSnapshot.child("date").getValue();
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                String value = dataSnapshot.child("Events").getValue(String.class);
+                list.add(value);
+
+                //String lawyername = list.get(0);
+                //event_history.setText("First Name:  "+lawyername);
 
 
-                date.setText("Free Time:  "+dateView);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
     }
-
-
-
-
-
-
 
 
 }

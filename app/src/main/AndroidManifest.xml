@@ -18,7 +18,46 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".eventHistory"></activity>
+        <activity android:name=".updateCustomerprofile"></activity>
+        <activity android:name=".sms" />
+        <activity android:name=".notifcationCustomerActivity" />
+        <activity android:name=".pastCustomerActivity" />
+        <activity android:name=".ScheduleCustomerActivity" />
+        <activity android:name=".profileCustomerActivity" />
+        <activity
+            android:name=".customerNavigation"
+            android:label="@string/title_activity_customer_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".homeCustomer">
+            <intent-filter>
+                <action android:name=".homeCustomer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".loginCustomer">
+            <intent-filter>
+                <action android:name=".loginCustomer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".customer">
+            <intent-filter>
+                <action android:name=".customer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".initial">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".updateProfile" />
+        <activity android:name=".eventHistory" />
         <activity android:name=".profileActivity" />
         <activity
             android:name=".Jurist"
@@ -27,8 +66,6 @@
         <activity android:name=".notifcationActivity" />
         <activity android:name=".pastActivity" />
         <activity android:name=".ScheduleActivity" />
-        <activity android:name=".city" />
-        <activity android:name=".dropDown" />
         <activity android:name=".ForgotPassword">
             <intent-filter>
                 <action android:name=".ForgotPassword" />
@@ -45,9 +82,9 @@
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name=".MainActivity" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".home">

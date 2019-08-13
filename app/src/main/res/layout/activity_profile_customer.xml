@@ -5,20 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".profileActivity"
+    tools:context=".profileCustomerActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:textSize="20sp"
-        android:fontFamily="@font/bold"
-        android:paddingTop="35dp"
-        android:id="@+id/profile_heading"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:text="@string/profile_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -117,16 +106,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 
-    <TextView
-        android:textSize="20dp"
-        android:fontFamily="@font/s"
-        android:paddingTop="50dp"
-        android:id="@+id/profile_reference"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/colorAccent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <Button
         android:id="@+id/edit_button"

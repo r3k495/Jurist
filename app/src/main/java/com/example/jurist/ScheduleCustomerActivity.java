@@ -74,7 +74,7 @@ public class ScheduleCustomerActivity extends AppCompatActivity {
             protected void populateViewHolder(UsersViewHolder viewHolder, Lawyers model, int position) {
 
 
-                viewHolder.setDetails(getApplicationContext(), model.getName(), model.getLastName(),model.getLocation());
+                viewHolder.setDetails(getApplicationContext(), model.getName(), model.getLastName(),model.getLocation(),model.getCase_type());
 
             }
         };
@@ -98,11 +98,13 @@ public class ScheduleCustomerActivity extends AppCompatActivity {
 
         }
 
-        public void setDetails(Context ctx, String userName, String userLastName,String userLocation){
+        public void setDetails(Context ctx, String userName, String userLastName,String userLocation,String userCaseType){
 
             TextView user_name = (TextView) mView.findViewById(R.id.name_text);
             TextView user_last_name = (TextView) mView.findViewById(R.id.status_text);
             TextView user_location = (TextView) mView.findViewById(R.id.location_text);
+            TextView user_case_type = (TextView) mView.findViewById(R.id.case_type);
+
 
 
 
@@ -110,6 +112,8 @@ public class ScheduleCustomerActivity extends AppCompatActivity {
             user_name.setText(userName);
             user_last_name.setText(userLastName);
             user_location.setText(userLocation);
+            user_case_type.setText(userCaseType);
+
             ;
 
 

@@ -8,7 +8,7 @@ package com.example.jurist;
 
 public class Lawyers {
 
-    public String first_name,last_name,district;
+    public String first_name,last_name,district,case_type;
 
     public Lawyers(){
 
@@ -43,12 +43,21 @@ public class Lawyers {
     }
 
 
+    public String getCase_type() {
+        return case_type;
+    }
 
-    public Lawyers(String first_name, String last_name, String location) {
+    public void setCase_type(String case_type) {
+        this.case_type = case_type;
+    }
+
+
+
+    public Lawyers(String first_name, String last_name, String location, String case_type) {
         this.first_name = first_name;
         this.last_name=last_name;
         this.district=location;
-
+        this.case_type=case_type;
 
     }
 }

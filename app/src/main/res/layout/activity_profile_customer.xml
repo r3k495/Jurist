@@ -24,7 +24,7 @@
             android:layout_marginEnd="155dp"
             android:layout_marginBottom="0dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/transperant"
+            android:src="@drawable/transperant_customer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"

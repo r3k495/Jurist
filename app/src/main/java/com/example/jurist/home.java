@@ -52,7 +52,7 @@ import java.util.regex.*;
 
 
 
-public class home extends AppCompatActivity implements View.OnClickListener {
+public class home extends AppCompatActivity implements View.OnClickListener, OnItemSelectedListener {
 
 
     private Button signup;
@@ -68,12 +68,15 @@ public class home extends AppCompatActivity implements View.OnClickListener {
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private String firebaseUserid;
+    private String citySelected;
+    public String caseSelected;
+
 
 
     DatabaseReference databaseReference;
 
 
-
+    CustomOnSelectedListener x = new CustomOnSelectedListener();
 
 
     @Override
@@ -86,9 +89,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_home);
 
         Spinner spinner = (Spinner) findViewById(R.id.city_spinner);
-
-
-
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.city, R.layout.color_spinner_layout);
@@ -96,6 +96,21 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         adapter.setDropDownViewResource( R.layout.spinner_dropdown_layout);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
+
+        Spinner spinner1 = (Spinner) findViewById(R.id.case_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
+                R.array.case_type, R.layout.color_spinner_layout);
+// Specify the layout to use when the list of choices appears
+        adapter1.setDropDownViewResource( R.layout.spinner_dropdown_layout);
+// Apply the adapter to the spinner
+        spinner1.setAdapter(adapter1);
+
+        spinner1.setOnItemSelectedListener(x);
+
 
 
 
@@ -116,6 +131,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         signup_password=(EditText) findViewById(R.id.password);
         signup_re_enter_password=(EditText) findViewById(R.id.re_enter_password);
         below_login=(TextView) findViewById(R.id.below_login);
+
 
         signup.setOnClickListener(this);
         signup_cancel.setOnClickListener(this);
@@ -156,6 +172,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         final String reference_no = signup_reference_no.getText().toString().trim();
         String password = signup_password.getText().toString().trim();
         String re_enter_password = signup_re_enter_password.getText().toString().trim();
+        //final String district = "Jaffna";
 
 
 
@@ -221,14 +238,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         }
 
 
-        //validation for phone no
-        if (phone_no.length()<10) {
-
-            Toast.makeText(this, "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-
 
 
 
@@ -247,6 +256,10 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                            // String id=databaseReference.push().getKey();
 
                             jurist_lawyer lawyer=new jurist_lawyer(first_name,last_name,email,phone_no,reference_no);
+                            lawyer.setDistrict(citySelected);
+
+                            lawyer.setCase_type(x.caseSelected1);
+
                             databaseReference.child(firebaseUserid).setValue(lawyer);
 
                             Toast.makeText(home.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
@@ -322,21 +335,22 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
 
     }
-    public class SpinnerActivity extends Activity implements OnItemSelectedListener {
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        citySelected=parent.getItemAtPosition(position).toString();
+        //caseSelected=parent.getItemAtPosition(position).toString();
 
-        public void onItemSelected(AdapterView<?> parent, View view,
-                                   int pos, long id)
-
-        {
-            // An item was selected. You can retrieve the selected item using
-            // parent.getItemAtPosition(pos)
-        }
-
-        public void onNothingSelected(AdapterView<?> parent) {
-            // Another interface callback
-        }
+        //debugging purpose
+        Toast.makeText(this,citySelected,Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
 
 
 

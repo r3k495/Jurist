@@ -118,7 +118,7 @@ public class updateProfile extends AppCompatActivity implements View.OnClickList
             mUsersDB.child(firebaseUserid).child("phone_no").setValue(phone_no);
 
 
-            //displaying a success toast
+            //displaying a success toasts
             Toast.makeText(updateProfile.this, "Profile Updated...", Toast.LENGTH_LONG).show();
 
 

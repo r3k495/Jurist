@@ -9,6 +9,8 @@ public class jurist_lawyer {
     String reference_no;
     String district;
     String case_type;
+    String cash_type;
+
 
 
     public jurist_lawyer(){
@@ -33,6 +35,10 @@ public class jurist_lawyer {
 
     public void setCase_type(String case_type){
         this.case_type = case_type;
+    }
+
+    public void setCash_type(String cash_type){
+        this.cash_type = cash_type;
     }
 
 

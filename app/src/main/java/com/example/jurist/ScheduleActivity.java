@@ -24,7 +24,10 @@ import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ScheduleActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,7 +55,7 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
         send_button = (Button) findViewById(R.id.button);
         view_button = (Button) findViewById(R.id.view_button);
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Lawyers");
+        myRef = database.getReference("Events");
         event = new event_list();
         FirebaseApp.initializeApp(this);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -62,7 +65,9 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
+
     private void getValues() {
+
 
        event.setDate(date.getText().toString());
        //event.setUID("1");
@@ -83,13 +88,31 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
 
                 events.add(date.getText().toString());
                 for(String friend : events) {
-                    myRef.child(firebaseUserid).child("Events").child(friend).setValue(true);
+                    myRef.child(firebaseUserid).child(friend).setValue(true);
                     //rootRef.child("friends").child(friend).setValue(true);
+
+
+                    //date validation
+                    String regex = "[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(friend);
+                    if (!matcher.matches()) {
+                        Toast.makeText(ScheduleActivity.this,"Please enter valid date", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    else {
+                        Toast.makeText(ScheduleActivity.this,"Date Inserted", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                 }
 
                 Toast.makeText(ScheduleActivity.this, "Date Inserted", Toast.LENGTH_LONG);
 
             }
+
+
         });
 
 

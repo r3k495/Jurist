@@ -9,6 +9,7 @@
     <string name="phone_no">PHONE NO    (Eg: +947########)</string>
     <string name="city">CHOOSE YOUR CITY</string>
     <string name="case_type">CHOOSE YOUR CASE TYPE</string>
+    <string name="cash_type">CHOOSE YOUR PAYMENT</string>
     <string name="reference_no">REFERENCE NO</string>
     <string name="sign_up">SIGN UP</string>
     <string name="cancel">CANCEL</string>
@@ -91,10 +92,18 @@
     </string-array>
 
     <string-array name="case_type">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>Civil law: Land</item>
+        <item>Civil law: Divorce+Maintenance</item>
+        <item>Civil law: Delict</item>
+        <item>Criminal law</item>
+        <item>Commercial law</item>
+    </string-array>
+
+    <string-array name="cash_type">
+        <item>10,000 - 20,000</item>
+        <item>20,000 - 30,000</item>
+        <item>30,000 - 40,000</item>
+        <item>40,000 - 50,000</item>
     </string-array>
 
     <string name="title_activity_first">First</string>
@@ -175,6 +184,11 @@
     <string name="lawyers_search">RESERVE LAWYER</string>
     <string name="username">Username</string>
     <string name="todo_2">TODO</string>
+    <string name="todo_1">TODO</string>
+    <string name="search">SEARCH</string>
+    <string name="choose_time">CHOOSE TIME SLOT</string>
+    <string name="view_time_slots">VIEW TIME SLOTS</string>
+    <string name="delete">DELETE</string>
 
 
 </resources>

@@ -78,6 +78,9 @@ public class home extends AppCompatActivity implements View.OnClickListener, OnI
 
     CustomOnSelectedListener x = new CustomOnSelectedListener();
 
+    CustomListener y = new CustomListener();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +114,18 @@ public class home extends AppCompatActivity implements View.OnClickListener, OnI
 
         spinner1.setOnItemSelectedListener(x);
 
+
+
+        Spinner spinner2 = (Spinner) findViewById(R.id.cash_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.cash_type, R.layout.color_spinner_layout);
+// Specify the layout to use when the list of choices appears
+        adapter2.setDropDownViewResource( R.layout.spinner_dropdown_layout);
+// Apply the adapter to the spinner
+        spinner2.setAdapter(adapter2);
+
+        spinner2.setOnItemSelectedListener(y);
 
 
 
@@ -260,6 +275,9 @@ public class home extends AppCompatActivity implements View.OnClickListener, OnI
 
                             lawyer.setCase_type(x.caseSelected1);
 
+                            lawyer.setCash_type(y.cashSelected);
+
+
                             databaseReference.child(firebaseUserid).setValue(lawyer);
 
                             Toast.makeText(home.this,"Registered Successfully",Toast.LENGTH_SHORT).show();
@@ -342,7 +360,7 @@ public class home extends AppCompatActivity implements View.OnClickListener, OnI
         //caseSelected=parent.getItemAtPosition(position).toString();
 
         //debugging purpose
-        Toast.makeText(this,citySelected,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,citySelected,Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -18,8 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".updateCustomerprofile"></activity>
-        <activity android:name=".sms" />
+        <activity android:name=".bookTime" />
+        <activity android:name=".customerForgotPassword" />
+        <activity android:name=".updateCustomerprofile" />
         <activity android:name=".notifcationCustomerActivity" />
         <activity android:name=".pastCustomerActivity" />
         <activity android:name=".ScheduleCustomerActivity" />

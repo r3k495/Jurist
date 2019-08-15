@@ -146,7 +146,7 @@ public class loginCustomer extends AppCompatActivity implements View.OnClickList
         }
         switch (view.getId()) {
             case R.id.forgot_password:
-                Intent intent = new Intent(loginCustomer.this, ForgotPassword.class);
+                Intent intent = new Intent(loginCustomer.this, customerForgotPassword.class);
                 startActivity(intent);
 
         }
